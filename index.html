@@ -10,11 +10,12 @@
 <meta property="og:url" content="https://profreginapurri.github.io/alice-1-ano/">
 <meta property="og:title" content="A Alice faz 1 aninho! 🐞">
 <meta property="og:description" content="Domingo, 08 de novembro, das 10h às 14h, na Casa de festas Faz de Conta (BH). Venha comemorar e confirme sua presença!">
-<meta property="og:image" content="https://profreginapurri.github.io/alice-1-ano/fotos/previa-alice.jpg">
+<meta property="og:image" content="https://profreginapurri.github.io/alice-1-ano/fotos/cartao-whatsapp.jpg">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image:alt" content="Convite: meu niver, 08 de novembro, das 10h às 14h">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐞</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -185,6 +186,11 @@ footer svg{width:2rem;vertical-align:middle;margin-inline:.3rem}
   60% {transform:scale(1.06,.94) rotate(-4deg)}
   100%{transform:scale(.96,1.08) rotate(2deg)}
 }
+
+/* joaninhas que andam com a rolagem (posição definida pelo script) */
+.crawler{position:fixed;left:0;top:0;z-index:5;pointer-events:none;will-change:transform;
+  filter:drop-shadow(0 2px 2px rgba(59,37,49,.25))}
+.crawler svg{display:block;width:100%;height:auto;overflow:visible}
 
 /* chamas das velinhas: posições em % da imagem alice-bolo.png (854x1200) */
 .flame{
@@ -392,6 +398,62 @@ footer svg{width:2rem;vertical-align:middle;margin-inline:.3rem}
     document.getElementById("cd-m").textContent = pad(m % 60);
   }
   tick(); setInterval(tick, 30000);
+
+  // Joaninhas que andam pelas laterais conforme a página rola
+  (function () {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const legs = '<g stroke="#3B2531" stroke-width="2.6" stroke-linecap="round" fill="none">';
+    const tpl = '<svg viewBox="-6 -2 76 66">' +
+      legs + '<g class="la"><path d="M14 30 L3 25"/><path d="M50 40 L61 40"/><path d="M15 50 L5 56"/></g>' +
+      '<g class="lb"><path d="M50 30 L61 25"/><path d="M14 40 L3 40"/><path d="M49 50 L59 56"/></g></g>' +
+      '<use href="#bug"/></svg>';
+    // lado, tamanho, velocidade em relação à rolagem, posição inicial, zigue-zague
+    const cfg = [
+      { side: "l", size: 30, speed: .55, off: .12, amp: 16, freq: .0045, ph: 0 },
+      { side: "r", size: 25, speed: .8,  off: .55, amp: 12, freq: .006,  ph: 2 },
+      { side: "l", size: 22, speed: 1.1, off: .85, amp: 22, freq: .0032, ph: 4 },
+      { side: "r", size: 20, speed: .4,  off: .3,  amp: 10, freq: .005,  ph: 1 }
+    ];
+    const bugs = cfg.map(c => {
+      const el = document.createElement("div");
+      el.className = "crawler"; el.setAttribute("aria-hidden", "true");
+      el.style.width = c.size + "px"; el.innerHTML = tpl;
+      document.body.appendChild(el);
+      return { ...c, el, la: el.querySelector(".la"), lb: el.querySelector(".lb"), x: null, y: null, ang: 180, dist: 0 };
+    });
+    function place() {
+      const vw = innerWidth, vh = innerHeight, s = scrollY;
+      const narrow = vw < 640;
+      const gutter = Math.max(4, (vw - 736) / 4);
+      const range = vh + 120;
+      for (const b of bugs) {
+        const amp = narrow ? Math.min(b.amp, 5) : b.amp;
+        const base = b.side === "l" ? gutter : vw - gutter - b.size;
+        const x = base + amp * Math.sin(s * b.freq + b.ph) + (b.side === "l" ? amp : -amp);
+        const y = ((s * b.speed + b.off * range) % range + range) % range - 60;
+        if (b.x !== null) {
+          const dx = x - b.x, dy = y - b.y, d = Math.hypot(dx, dy);
+          if (d > 0.3 && d < 200) {
+            const target = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+            let delta = ((target - b.ang + 540) % 360) - 180;
+            b.ang += delta * .35;
+            b.dist += d;
+          }
+        }
+        b.x = x; b.y = y;
+        const step = Math.sin(b.dist / 3.2);
+        b.la.style.transform = `translate(0, ${step * 2.4}px)`;
+        b.lb.style.transform = `translate(0, ${-step * 2.4}px)`;
+        b.el.style.transform = `translate(${x}px, ${y}px) rotate(${b.ang}deg)`;
+      }
+    }
+    let queued = false;
+    addEventListener("scroll", () => {
+      if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; place(); }); }
+    }, { passive: true });
+    addEventListener("resize", place);
+    place();
+  })();
 </script>
 
 
