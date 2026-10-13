@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Alice faz 1 aninho!</title>
+<meta name="description" content="Domingo, 08 de novembro, das 10h às 14h, na Casa de festas Faz de Conta (BH). Venha comemorar e confirme sua presença!">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://profreginapurri.github.io/alice-1-ano/">
+<meta property="og:title" content="A Alice faz 1 aninho! 🐞">
+<meta property="og:description" content="Domingo, 08 de novembro, das 10h às 14h, na Casa de festas Faz de Conta (BH). Venha comemorar e confirme sua presença!">
+<meta property="og:image" content="https://profreginapurri.github.io/alice-1-ano/fotos/previa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Short+Stack&family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+<style>
+/* Layout: uma folha de papel do convite, colagem em coluna única; letras recortadas no título, polaroids na galeria. Visual único (claro), como o convite impresso. */
+:root{
+  --paper:#E9E5DF;      /* papel amassado do convite */
+  --paper-2:#F3EFE8;    /* creme dos balões e do bolo */
+  --wine:#8C1F33;       /* vinho das letras e datas */
+  --plum:#3B2531;       /* recortes escuros */
+  --pink:#D982B4;       /* rosa do "u" e do "e" */
+  --coral:#EE4B48;      /* vermelho da joaninha */
+  --butter:#F2D79B;     /* amarelo das estrelas */
+  --ink:#4A2B33;        /* texto corrido */
+  --line:rgba(140,31,51,.18);
+  --f-cut:"Bagel Fat One","Arial Black",system-ui,sans-serif;
+  --f-hand:"Short Stack","Comic Sans MS","Chalkboard SE",cursive;
+  --f-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 1rem/1.65 var(--f-body);
+  background-image:
+    radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.55),transparent 55%),
+    radial-gradient(ellipse at 80% 70%,rgba(255,255,255,.4),transparent 50%),
+    linear-gradient(115deg,transparent 48%,rgba(0,0,0,.025) 50%,transparent 52%),
+    linear-gradient(35deg,transparent 30%,rgba(0,0,0,.02) 31%,transparent 33%);
+}
+.wrap{max-width:46rem;margin:0 auto;padding-inline:clamp(16px,5vw,40px);padding-block:0 4rem}
+section{padding-block:3.5rem 0}
+h2{font:400 clamp(1.7rem,5vw,2.3rem)/1.1 var(--f-cut);color:var(--wine);margin:0 0 1.2rem;text-wrap:balance}
+h2 .hand{display:block;font:400 1rem/1.4 var(--f-hand);color:var(--ink);margin-top:.35rem}
+p{margin:0 0 1rem;max-width:62ch}
+a{color:var(--wine)}
+:focus-visible{outline:3px dashed var(--coral);outline-offset:3px;border-radius:4px}
+
+/* varal de estrelas e joaninhas */
+.garland{display:block;width:100%;height:auto;max-width:100%}
+
+/* ---------- hero ---------- */
+.hero{position:relative;display:grid;grid-template-columns:1fr;gap:1.5rem;padding-top:.5rem;text-align:left}
+.hero-photo{position:relative;justify-self:center;width:min(23rem,90%);margin-top:.5rem}
+.cutout{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(59,37,49,.12))}
+.hero-photo .bug{position:absolute;width:12%;}
+.hero-photo .bug.b1{left:14%;top:22%;transform:rotate(-25deg)}
+
+.ransom{display:flex;flex-wrap:wrap;justify-content:center;gap:.18rem .2rem;margin:0;line-height:1}
+.ransom .word{display:flex;gap:.12rem;margin-inline:.35rem}
+.ransom span{
+  font-family:var(--f-cut);font-size:clamp(2.4rem,11vw,4.4rem);
+  display:inline-grid;place-items:center;min-width:.9em;padding:.06em .1em .02em;
+  clip-path:polygon(3% 6%,96% 0,100% 92%,5% 100%);
+}
+.ransom .sm span{font-size:clamp(1.5rem,6vw,2.3rem)}
+.t1{background:var(--butter);color:var(--coral)}
+.t2{background:var(--plum);color:var(--coral)}
+.t3{background:var(--wine);color:var(--pink)}
+.t4{background:var(--paper-2);color:var(--wine)}
+.t5{background:var(--pink);color:var(--wine)}
+.t6{background:var(--wine);color:var(--butter)}
+.t7{background:var(--plum);color:var(--paper-2)}
+.t8{background:repeating-linear-gradient(0deg,transparent 0 9px,rgba(255,255,255,.25) 9px 10px),repeating-linear-gradient(90deg,var(--wine) 0 9px,rgba(255,255,255,.25) 9px 10px);color:var(--butter)}
+.r1{transform:rotate(-6deg)}.r2{transform:rotate(4deg) translateY(4px)}.r3{transform:rotate(-2deg)}.r4{transform:rotate(7deg)}.r5{transform:rotate(-8deg) translateY(-3px)}
+
+.when{font:400 clamp(1.35rem,4.5vw,1.75rem)/1.35 var(--f-hand);color:var(--wine);text-align:center;margin:.4rem 0 0}
+.where{font-style:italic;color:var(--wine);text-align:center;margin:.3rem auto 0}
+.lede{text-align:center;margin:1.4rem auto 0;font-size:1.06rem}
+
+/* contagem regressiva */
+.count{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-top:1.6rem}
+.count div{
+  background:var(--paper-2);border:2px dashed var(--line);border-radius:14px;
+  padding:.55rem .9rem .45rem;min-width:4.6rem;text-align:center;
+}
+.count b{display:block;font:400 2rem/1 var(--f-cut);color:var(--wine);font-variant-numeric:tabular-nums}
+.count small{font:400 .8rem/1.2 var(--f-hand);color:var(--ink)}
+.count-done{font:400 1.3rem var(--f-hand);color:var(--coral);text-align:center;margin-top:1.4rem}
+
+/* ---------- joaninha ---------- */
+.story{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center}
+@media (min-width:640px){.story{grid-template-columns:15rem 1fr}}
+.polaroid{
+  background:#fff;padding:.6rem .6rem 0;box-shadow:0 8px 20px rgba(59,37,49,.16);
+  margin:0;position:relative;max-width:100%;
+}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.polaroid figcaption{font:400 1rem/1.3 var(--f-hand);color:var(--ink);text-align:center;padding:.55rem .2rem .7rem}
+.polaroid::before{
+  content:"";position:absolute;top:-12px;left:50%;width:5.5rem;height:1.5rem;transform:translateX(-50%) rotate(-3deg);
+  background:rgba(242,215,155,.75);box-shadow:0 1px 2px rgba(0,0,0,.08);
+}
+.story .polaroid{transform:rotate(-3deg);justify-self:center;width:min(15rem,80%)}
+.eq{font:400 1.2rem/1.5 var(--f-hand);color:var(--wine);margin:.2rem 0 1rem}
+.eq em{font-style:normal;background:var(--butter);padding:0 .3rem}
+
+/* ---------- informações ---------- */
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.ticket{background:var(--paper-2);border-radius:6px;padding:1.2rem 1.3rem;border:1.5px solid var(--line);min-width:0}
+.ticket h3{font:400 .78rem/1 var(--f-body);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:0 0 .6rem}
+.ticket p{margin:0;font-size:1.02rem}
+.ticket .big{font:400 1.35rem/1.3 var(--f-hand);color:var(--wine);margin-bottom:.35rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:.9rem;
+  font:600 .95rem/1 var(--f-body);color:var(--paper-2);background:var(--wine);
+  padding:.75rem 1.1rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;
+  box-shadow:0 3px 0 var(--plum);transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--plum)}
+.btn:active{transform:translateY(1px);box-shadow:0 1px 0 var(--plum)}
+.btn.ghost{background:transparent;color:var(--wine);box-shadow:inset 0 0 0 2px var(--wine)}
+
+/* ---------- galeria ---------- */
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem 1.2rem;padding-top:.6rem}
+@media (min-width:640px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gallery .polaroid:nth-child(3n+1){transform:rotate(-2.5deg)}
+.gallery .polaroid:nth-child(3n+2){transform:rotate(1.8deg) translateY(.6rem)}
+.gallery .polaroid:nth-child(3n){transform:rotate(-1deg)}
+.gallery .polaroid figcaption{font-size:.92rem}
+.gallery .wide{grid-column:span 2}
+.gallery .wide img{aspect-ratio:4/3}
+@media (max-width:639px){.gallery .solo{grid-column:span 2;justify-self:center;width:70%}}
+
+/* ---------- presentes ---------- */
+.note{
+  background:var(--wine);color:var(--paper-2);border-radius:6px;padding:1.3rem 1.4rem;margin-bottom:1.6rem;
+  font:400 1.15rem/1.5 var(--f-hand);position:relative;
+}
+.note strong{color:var(--butter);font-weight:400}
+.gifts{display:grid;grid-template-columns:repeat(auto-fit,minmax(14.5rem,1fr));gap:1rem;list-style:none;margin:0;padding:0}
+.gift{background:var(--paper-2);border:1.5px solid var(--line);border-radius:6px;padding:1.1rem 1.2rem 1.2rem;min-width:0}
+.gift h3{font:400 1.15rem/1.25 var(--f-cut);color:var(--wine);margin:0 0 .15rem;letter-spacing:.01em}
+.gift .why{font:400 .92rem/1.4 var(--f-hand);color:var(--coral);margin:0 0 .5rem}
+.gift p{font-size:.95rem;margin:0}
+.tag{display:inline-block;font:600 .72rem/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;background:var(--butter);color:var(--plum);padding:.3rem .45rem;border-radius:3px;margin-top:.6rem}
+.skip{margin-top:1.3rem;padding:1rem 1.2rem;border:2px dashed var(--line);border-radius:6px;font-size:.95rem}
+.skip b{color:var(--wine)}
+
+/* ---------- confirmação ---------- */
+.rsvp{text-align:center;background:var(--paper-2);border-radius:8px;padding:2rem 1.3rem 2.2rem;border:1.5px solid var(--line);position:relative}
+.rsvp p{margin-inline:auto}
+.rsvp .btn{font-size:1.05rem;padding:.95rem 1.5rem}
+.rsvp .soon{font:400 1rem var(--f-hand);color:var(--coral);margin-top:1rem}
+.rsvp .bug{width:2.4rem;position:absolute;top:-1.1rem;right:1.4rem;transform:rotate(18deg)}
+
+footer{text-align:center;padding-top:3.5rem;font:400 1.05rem/1.5 var(--f-hand);color:var(--wine)}
+footer svg{width:2rem;vertical-align:middle;margin-inline:.3rem}
+
+/* entrada suave, sempre visível em repouso */
+@media (prefers-reduced-motion:no-preference){
+  .ransom span{animation:drop .6s cubic-bezier(.3,1.4,.6,1) both}
+  .ransom span:nth-child(2){animation-delay:.05s}.ransom span:nth-child(3){animation-delay:.1s}
+  .ransom span:nth-child(4){animation-delay:.15s}.ransom span:nth-child(5){animation-delay:.2s}
+  .walk{animation:walk 9s ease-in-out infinite alternate}
+}
+@keyframes drop{from{translate:0 -14px;opacity:.4}to{translate:0 0;opacity:1}}
+@keyframes walk{from{translate:-6px 0}to{translate:6px 0}}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bug" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="17" rx="11" ry="9" fill="#3B2531"/>
+      <path d="M21 14 L14 5 M43 14 L50 5" stroke="#3B2531" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <circle cx="14" cy="5" r="2.4" fill="#3B2531"/><circle cx="50" cy="5" r="2.4" fill="#3B2531"/>
+      <path d="M32 20 C14 20 8 34 10 44 C13 56 25 60 32 60 C39 60 51 56 54 44 C56 34 50 20 32 20Z" fill="#EE4B48"/>
+      <path d="M32 21 V60" stroke="#3B2531" stroke-width="2"/>
+      <circle cx="21" cy="33" r="4.2" fill="#3B2531"/><circle cx="43" cy="33" r="4.2" fill="#3B2531"/>
+      <circle cx="19" cy="47" r="3.6" fill="#3B2531"/><circle cx="45" cy="47" r="3.6" fill="#3B2531"/>
+      <circle cx="29" cy="53" r="2.4" fill="#3B2531"/><circle cx="37" cy="41" r="2.6" fill="#3B2531"/>
+      <path d="M17 27 C20 23 25 22 27 23" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 40 40">
+      <path d="M20 2 L25 15 L38 15 L27.5 23.5 L31.5 37 L20 29 L8.5 37 L12.5 23.5 L2 15 L15 15Z" fill="#F2D79B" stroke="#E0B865" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <svg class="garland" viewBox="0 0 700 90" role="img" aria-label="Varal de estrelas e joaninhas">
+    <path d="M-5 18 Q175 80 350 40 T705 30" fill="none" stroke="#6E6475" stroke-width="2"/>
+    <use href="#star" x="20" y="20" width="38" height="38"/>
+    <use href="#bug" x="110" y="42" width="34" height="34"/>
+    <use href="#star" x="200" y="50" width="34" height="34"/>
+    <use href="#bug" x="300" y="36" width="34" height="34"/>
+    <use href="#star" x="395" y="24" width="40" height="40"/>
+    <use href="#bug" x="490" y="20" width="34" height="34"/>
+    <use href="#star" x="580" y="18" width="34" height="34"/>
+    <use href="#bug" x="650" y="24" width="32" height="32"/>
+  </svg>
+
+  <header class="hero">
+    <div class="hero-photo">
+      <img class="cutout" src="fotos/alice-bolo.png" alt="Alice sorrindo com chapéu de festa atrás de um bolo com velinhas">
+      <svg class="bug b1 walk" viewBox="0 0 64 64" aria-hidden="true"><use href="#bug"/></svg>
+    </div>
+
+    <h1 class="ransom" aria-label="A Alice faz 1 aninho">
+      <span class="word sm" aria-hidden="true"><span class="t7 r1">a</span></span>
+      <span class="word" aria-hidden="true"><span class="t1 r2">A</span><span class="t3 r3">l</span><span class="t5 r4">i</span><span class="t2 r1">c</span><span class="t8 r5">e</span></span>
+      <span class="word sm" aria-hidden="true"><span class="t4 r3">f</span><span class="t6 r2">a</span><span class="t7 r4">z</span></span>
+      <span class="word" aria-hidden="true"><span class="t2 r5">1</span></span>
+      <span class="word sm" aria-hidden="true"><span class="t5 r1">a</span><span class="t3 r2">n</span><span class="t1 r3">i</span><span class="t7 r4">n</span><span class="t4 r5">h</span><span class="t6 r1">o</span></span>
+    </h1>
+
+    <div>
+      <p class="when">domingo, 08 de novembro<br>das 10h às 14h</p>
+      <p class="where">Casa de festas Faz de Conta · Av. do Contorno, 3891 · São Lucas, BH</p>
+      <p class="lede">Faz um ano que uma joaninha pousou aqui em casa e mudou tudo. Agora ela anda, conversa do jeitinho dela e dança rock no colo de quem estiver por perto. Venha comemorar com a gente!</p>
+      <div class="count" id="count" aria-live="polite">
+        <div><b id="cd-d">--</b><small>dias</small></div>
+        <div><b id="cd-h">--</b><small>horas</small></div>
+        <div><b id="cd-m">--</b><small>minutos</small></div>
+      </div>
+      <p class="count-done" id="count-done" hidden>É hoje! A festa da joaninha está acontecendo.</p>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-joaninha">
+    <div class="story">
+      <figure class="polaroid">
+        <img src="fotos/alice-2.jpg" alt="Alice bebê nos ombros do pai, os dois sorrindo" loading="lazy">
+        <figcaption>a cara do papai</figcaption>
+      </figure>
+      <div>
+        <h2 id="h-joaninha">Por que joaninha?</h2>
+        <p class="eq">pai João + filha igualzinha = <em>uma pequena João</em> = <em>Joaninha</em></p>
+        <p>Quem vê a Alice logo diz que ela é a cara do pai. De tanto ouvir isso, ela virou nossa pequena João, e daí para Joaninha foi um pulo. Por isso a festa tem joaninhas por todo lado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-info">
+    <h2 id="h-info">Anote aí</h2>
+    <div class="info">
+      <div class="ticket">
+        <h3>Quando</h3>
+        <p class="big">08 de novembro de 2026</p>
+        <p>Domingo, das 10h às 14h</p>
+      </div>
+      <div class="ticket">
+        <h3>Onde</h3>
+        <p class="big">Casa de festas Faz de Conta</p>
+        <p>Av. do Contorno, 3891 – São Lucas, Belo Horizonte</p>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Casa%20de%20festas%20Faz%20de%20Conta%2C%20Av.%20do%20Contorno%2C%203891%2C%20S%C3%A3o%20Lucas%2C%20Belo%20Horizonte" target="_blank" rel="noopener">Abrir no mapa ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-fotos">
+    <h2 id="h-fotos">Um ano de Alice <span class="hand">alguns momentos do primeiro aninho</span></h2>
+    <div class="gallery">
+      <figure class="polaroid wide"><img src="fotos/alice-7.jpg" alt="Alice sentada com o pai ao lado do bolo de 1 ano" loading="lazy"><figcaption>parabéns com o papai</figcaption></figure>
+      <figure class="polaroid"><img src="fotos/alice-1.jpg" alt="Alice bebê sorrindo, de roupinha branca" loading="lazy"><figcaption>os primeiros sorrisos</figcaption></figure>
+      <figure class="polaroid"><img src="fotos/alice-3.jpg" alt="Alice sentada dentro de um brinquedo inflável" loading="lazy"><figcaption>exploradora oficial</figcaption></figure>
+      <figure class="polaroid"><img src="fotos/alice-4.jpg" alt="Alice acenando por uma janela do inflável" loading="lazy"><figcaption>oiê!</figcaption></figure>
+      <figure class="polaroid"><img src="fotos/alice-5.jpg" alt="Alice olhando para baixo pela janela do inflável" loading="lazy"><figcaption>tem alguém aí?</figcaption></figure>
+      <figure class="polaroid solo"><img src="fotos/alice-6.jpg" alt="Alice gargalhando de chapéu florido" loading="lazy"><figcaption>pura alegria</figcaption></figure>
+      <figure class="polaroid wide"><img src="fotos/alice-8.jpg" alt="Alice no colo da mãe ao lado do bolo de 1 ano" loading="lazy"><figcaption>e no colo da mamãe</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-presentes">
+    <h2 id="h-presentes">Sobre presentes</h2>
+    <div class="note">
+      O melhor presente é <strong>você lá com a gente</strong>. Presente não é necessário mesmo! Mas, se quiser muito levar uma lembrancinha, separamos algumas ideias que combinam com a fase da Alice.
+    </div>
+    <ul class="gifts">
+      <li class="gift">
+        <h3>Para comer e cozinhar</h3>
+        <p class="why">ela ama comer e já come sozinha!</p>
+        <p>Pense em itens para crianças um pouco maiores, não para bebês: prato com divisórias, talheres infantis de verdade, copo aberto ou garrafinha, lancheira, avental e utensílios de cozinha no tamanho dela para ajudar a cozinhar.</p>
+      </li>
+      <li class="gift">
+        <h3>Roupa de cama</h3>
+        <p>Jogo de lençol, fronha, edredom ou manta para cama de <b>solteiro</b>.</p>
+        <span class="tag">tamanho solteiro</span>
+      </li>
+      <li class="gift">
+        <h3>Sapatinhos</h3>
+        <p class="why">ela já está andando!</p>
+        <p>Hoje ela calça 19, mas cresce rápido. Se escolher sapato, vale ir um número acima e guardar a nota para troca.</p>
+        <span class="tag">hoje: nº 19</span>
+      </li>
+      <li class="gift">
+        <h3>Música de verdade</h3>
+        <p class="why">rock é com ela</p>
+        <p>Instrumentos para ela tocar com as mãos: pandeiro, tambor, gaita ou um ukulele. Aulas de musicalização para bebês também são uma ótima ideia.</p>
+      </li>
+    </ul>
+    <p class="skip"><b>Melhor evitar:</b> brinquedos, livros e roupas (ela já tem bastante) e qualquer coisa com tela. A Alice não usa telas.</p>
+  </section>
+
+  <section aria-labelledby="h-rsvp">
+    <div class="rsvp">
+      <svg class="bug" viewBox="0 0 64 64" aria-hidden="true"><use href="#bug"/></svg>
+      <h2 id="h-rsvp">Confirme sua presença</h2>
+      <p>Conte para a gente quantos adultos e quantas crianças vão, o nome de cada um e, se quiser, deixe um recadinho para a Alice.</p>
+      <a class="btn" id="rsvp-btn" href="#" target="_blank" rel="noopener" hidden>Confirmar presença ↗</a>
+      <p class="soon" id="rsvp-soon">O formulário de confirmação entra aqui em breve.</p>
+    </div>
+  </section>
+
+  <footer>
+    <svg aria-hidden="true" viewBox="0 0 64 64"><use href="#bug"/></svg>
+    te esperamos na festa da nossa joaninha
+    <svg aria-hidden="true" viewBox="0 0 64 64"><use href="#bug"/></svg>
+  </footer>
+</div>
+
+<script>
+  // Link do formulário do Superhuman Docs "Confirme sua presença - Alice faz 1 ano"
+  const RSVP_URL = "https://docs.superhuman.com/form/Confirme-sua-presenca-Alice-faz-1-ano_d6nuvVgDNap";
+  if (RSVP_URL) {
+    const b = document.getElementById("rsvp-btn");
+    b.href = RSVP_URL; b.hidden = false;
+    document.getElementById("rsvp-soon").hidden = true;
+  }
+
+  // Festa: 08/11/2026 às 10h, horário de Brasília
+  const party = new Date("2026-11-08T10:00:00-03:00").getTime();
+  const end = new Date("2026-11-08T14:00:00-03:00").getTime();
+  const pad = n => String(n).padStart(2, "0");
+  function tick() {
+    const now = Date.now(), diff = party - now;
+    if (diff <= 0) {
+      document.getElementById("count").hidden = true;
+      const done = document.getElementById("count-done");
+      done.hidden = false;
+      if (now > end) done.textContent = "Obrigada a todos que vieram celebrar o primeiro aninho da nossa joaninha!";
+      return;
+    }
+    const m = Math.floor(diff / 60000);
+    document.getElementById("cd-d").textContent = Math.floor(m / 1440);
+    document.getElementById("cd-h").textContent = pad(Math.floor(m / 60) % 24);
+    document.getElementById("cd-m").textContent = pad(m % 60);
+  }
+  tick(); setInterval(tick, 30000);
+</script>
+
+
+</body>
+</html>
